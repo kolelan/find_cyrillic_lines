@@ -28,26 +28,26 @@ cd кириллический-анализатор
 
 ```bash
 # Анализ файла (текстовый отчёт)
-python kirillic_analyzer.py input.txt
+python cyrillic_analyzer.py input.txt
 
 # Анализ с JSON-отчётом
-python kirillic_analyzer.py input.txt -j
+python cyrillic_analyzer.py input.txt -j
 
 # Анализ в режиме всей строки
-python kirillic_analyzer.py input.txt -a
+python cyrillic_analyzer.py input.txt -a
 ```
 
 ### Расширенные возможности
 
 ```bash
 # Создание именованного отчёта
-python kirillic_analyzer.py input.txt -o custom_report.json -j
+python cyrillic_analyzer.py input.txt -o custom_report.json -j
 
 # Применение замен из отчёта
-python kirillic_analyzer.py input.txt -r -o report.json
+python cyrillic_analyzer.py input.txt -r -o report.json
 
 # Комбинированный анализ (вся строка + JSON)
-python kirillic_analyzer.py input.txt -a -j
+python cyrillic_analyzer.py input.txt -a -j
 ```
 
 ## Формат JSON-отчёта
@@ -76,14 +76,14 @@ python kirillic_analyzer.py input.txt -a -j
 
 1. Сначала создайте отчёт:
 ```bash
-python kirillic_analyzer.py document.txt -j -o analysis.json
+python cyrillic_analyzer.py document.txt -j -o analysis.json
 ```
 
 2. Отредактируйте JSON-файл, заполнив поле `replace` для нужных фраз
 
 3. Примените изменения:
 ```bash
-python kirillic_analyzer.py document.txt -r -o analysis.json
+python cyrillic_analyzer.py document.txt -r -o analysis.json
 ```
 
 ## Обратная связь

@@ -1,4 +1,3 @@
-```markdown
 # Cyrillic Analyzer and Replacer
 
 Utility for detecting and replacing Russian-language content in text files with flexible reporting options.

@@ -1,58 +1,59 @@
-# Кириллический Анализатор и Заменитель
+```markdown
+# Cyrillic Analyzer and Replacer
 
-Утилита для поиска и замены русскоязычного контента в текстовых файлах с гибкими настройками отчётов.
+Utility for detecting and replacing Russian-language content in text files with flexible reporting options.
 
-## Возможности
+## Features
 
-- Поиск русскоязычных фраз в текстовых файлах
-- Два режима поиска:
-  - Отдельные слова/фразы (по умолчанию)
-  - Целые строки между первыми и последними кириллическими символами (`-a`)
-- Генерация отчётов в форматах:
-  - Текстовый (по умолчанию)
-  - JSON (`-j`) с компактным форматированием
-- Функция замены с резервным копированием (`-r`)
+- Detect Russian phrases in text files
+- Two search modes:
+  - Individual words/phrases (default)
+  - Full lines between first/last Cyrillic characters (`-a`)
+- Report formats:
+  - Text (default)
+  - JSON (`-j`) with compact formatting
+- Replacement function with backup (`-r`)
 
-## Установка
+## Installation
 
-Требуется Python 3.6+:
+Requires Python 3.6+:
 
 ```bash
-git clone https://github.com/ваш-репозиторий/кириллический-анализатор.git
-cd кириллический-анализатор
+git clone https://github.com/your-repo/cyrillic-analyzer.git
+cd cyrillic-analyzer
 ```
 
-## Использование
+## Usage
 
-### Базовые команды
+### Basic Commands
 
 ```bash
-# Анализ файла (текстовый отчёт)
+# Analyze file (text report)
 python cyrillic_analyzer.py input.txt
 
-# Анализ с JSON-отчётом
+# Analyze with JSON report
 python cyrillic_analyzer.py input.txt -j
 
-# Анализ в режиме всей строки
+# Analyze in full-line mode
 python cyrillic_analyzer.py input.txt -a
 ```
 
-### Расширенные возможности
+### Advanced Options
 
 ```bash
-# Создание именованного отчёта
+# Create named report
 python cyrillic_analyzer.py input.txt -o custom_report.json -j
 
-# Применение замен из отчёта
+# Apply replacements from report
 python cyrillic_analyzer.py input.txt -r -o report.json
 
-# Комбинированный анализ (вся строка + JSON)
+# Combined analysis (full-line + JSON)
 python cyrillic_analyzer.py input.txt -a -j
 ```
 
-## Формат JSON-отчёта
+## JSON Report Format
 
-Пример структуры отчёта:
+Example structure:
 
 ```json
 {
@@ -65,31 +66,37 @@ python cyrillic_analyzer.py input.txt -a -j
 }
 ```
 
-Поля:
-- `line`: Номер строки (1-based)
-- `position`: Позиция в строке (0-based)
-- `length`: Длина фразы
-- `include`: Найденный текст
-- `replace`: Поле для замены (изначально пустое)
+Fields:
+- `line`: Line number (1-based)
+- `position`: Character position (0-based)
+- `length`: Phrase length
+- `include`: Found text
+- `replace`: Replacement field (empty by default)
 
-## Лучшие практики
+## Best Practices
 
-1. Сначала создайте отчёт:
+1. First create report:
 ```bash
 python cyrillic_analyzer.py document.txt -j -o analysis.json
 ```
 
-2. Отредактируйте JSON-файл, заполнив поле `replace` для нужных фраз
+2. Edit JSON file, fill `replace` fields as needed
 
-3. Примените изменения:
+3. Apply changes:
 ```bash
 python cyrillic_analyzer.py document.txt -r -o analysis.json
 ```
 
-## Обратная связь
+## Feedback
 
-Нашли ошибку или есть предложения? Создайте issue в репозитории проекта.
+Found a bug or have suggestions? Create an issue in the project repository.
 
-## Лицензия
+
+## 🌍 Available Translations | Доступные переводы | 可用翻译
+- 🇬🇧 [English](Readme.md) - English version  
+- 🇷🇺 [Русский](Readme_ru.md) - Russian version  
+- 🇨🇳 [中文](Readme_ch.md) - Chinese version
+
+## License
 
 MIT License
